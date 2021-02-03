@@ -1,0 +1,24 @@
+﻿
+@model labb2.Models.PostModel
+@{
+    ViewData["Title"] = "Tapp - Add tip";
+}
+<div class="posts-wrapper">
+    <h1>@ViewData["PageTitle"]</h1>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+        <label asp-for="Todo">What to do:</label>
+        <br />
+        <input asp-for="Todo" placeholder="Play hide and seek"/>
+        <span asp-validation-for="Todo"></span>
+        <br /><br />
+        <label asp-for="Name">Your name:</label>
+        <br />
+        <input asp-for="Name" placeholder="Jessica"/>
+        <span asp-validation-for="Name"></span>
+        <br /><br />
+        <input type="submit" class="add" value="Add" />
+    </form>
+    <!-- ViewBag -->
+    <p>@ViewBag.thanks @ViewBag.name@ViewBag.postMessage</p>
+</div>

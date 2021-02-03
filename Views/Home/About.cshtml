@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Tapp - About the app";
+}
+
+<div class="about-wrapper">
+    <h1>@ViewData["PageTitle"]</h1>
+    <p>
+        The tapp (tip + app) app where created by Elin Stenbäck with the purpose that people who feel down about the ongoing pandemic should have a place to turn to. In the app, you can share/read about different things you can do when you are in quarantine, if your bored like the rest of us.
+    </p>
+
+    <h2>If you like this app, don't forget to give it a like below.</h2>
+    <div class="like">
+        <p id="number">0</p>
+        <button onclick="addOne()" type="button"><i class="fas fa-heart"></i></button>
+    </div>
+</div>

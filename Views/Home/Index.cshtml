@@ -1,0 +1,21 @@
+﻿@model IEnumerable<labb2.Models.PostModel>
+@{
+    ViewData["Title"] = "Tapp - Read tips";
+}
+<div class="index-wrapper">
+    <h1>@ViewData["PageTitle"]</h1>
+    <p>
+        Are you looking for tips on things that you can do to pass time during quarantine? Below you can read other people's suggestions on what you can do. Feel free to <a asp-controller="Home" asp-action="Posts">add your own tip.</a>
+    </p>
+    <img src="~/img/corona.png" alt="Illustration of corona virus" />
+    <h3>@ViewBag.name@ViewBag.personalMessage</h3>
+    <div class="posts">
+        @foreach (var post in Model)
+        {
+            <div class="individual-posts">
+                <p><span>What to do:</span> @post.Todo</p>
+                <p><span>Submitted by:</span> @post.Name</p>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>@ViewData["Title"]</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="~/css/styles.css" type="text/css" />
+    <!-- Link to icons -->
+    <script src="https://kit.fontawesome.com/c4348bcdca.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <a asp-controller="Home" asp-action="Index" class="logo">tapp</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+            <ul class="menu">
+                <!-- Taghelpers -->
+                <li id="first"><a asp-controller="Home" asp-action="Index">Read tips</a></li>
+                <li><a asp-controller="Home" asp-action="Posts">Add tip</a></li>
+                <li><a asp-controller="Home" asp-action="About">About the app</a></li>
+            </ul>
+    </header>
+    <!-- Main container -->
+    <div class="container">
+        @RenderBody()
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>© Copywrigth 2020</p>
+        <a href="http://elinstenback.se/" target="_blank">Developed by</a>
+    </footer>
+    <!-- Javascript -->
+    <script src="~/js/main.js"></script>
+</body>
+</html>

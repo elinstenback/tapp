@@ -1,0 +1,421 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes top {
+    0% {
+        top: -500px
+    }
+
+    100% {
+        top: 0px
+    }
+}
+
+body {
+    background-color: #d8eee0;
+    font-family: "Overpass", Arial, Helvetica, sans-serif;
+}
+
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  - - - - - - - - - - - HEADER WITH NAV - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+.header {
+    background-color: #d8eee0;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header ul {
+    list-style: none;
+    overflow: hidden;
+    background-color: #d8eee0;
+    text-align: right;
+}
+.header ul #first {
+    padding-top: 120px;
+}
+
+.header ul a {
+    display: block;
+    padding: 0px 20px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    font-size: 38px;
+    font-weight: 700;
+    color: #000;
+}
+
+.header ul a:hover {
+    text-decoration: underline;
+}
+
+.header .logo {
+    float: left;
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+}
+
+.header .menu {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    clear: both;
+    max-height: 0;
+    transition: max-height .0s ease-out;
+}
+
+.header .menu-icon {
+    position: relative;
+    padding-top: 30px;
+    padding-right: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+    background: #000;
+    display: block;
+    height: 2px;
+    width: 30px;
+    position: relative;
+    transition: background .2s ease-out;
+    z-index: 100;
+}
+
+.header .menu-icon .nav-icon:before {
+    background: #000;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+    z-index: 100;
+}
+
+.header .menu-icon .nav-icon:after {
+    background: #000;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+    z-index: 100;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    background-color: #d8eee0;
+    background-image: url(../../img/corona.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: calc(100vh);
+    transition: all 1s ease-in-out;
+    animation: top;
+    animation-duration: 1s;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+
+
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  - - - - - - - - - - - - - - INDEX - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+.index-wrapper {
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.index-wrapper h1 {
+    margin-top: 100px;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.index-wrapper p {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+.index-wrapper p a {
+    color: #EB8800;
+    cursor: pointer;
+}
+.index-wrapper img {
+    width: 100%;
+}
+
+.index-wrapper h3 {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.index-wrapper .posts {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.index-wrapper .posts .individual-posts {
+    padding: 10px 0;
+    border-bottom: 1px solid #42594a;
+}
+.index-wrapper .posts .individual-posts span {
+    font-weight: 700;
+}
+.index-wrapper .posts .individual-posts p {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  - - - - - - - - - - - - - - ABOUT - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+.about-wrapper {
+    height: calc(100vh - 100px);
+    padding: 20px;
+    text-align: center;
+}
+
+.about-wrapper h1 {
+    margin-top: 100px;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.about-wrapper p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+.about-wrapper h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 60px;
+}
+.about-wrapper .like {
+    position: relative;
+}
+.about-wrapper .like p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
+.about-wrapper .like button {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     font-size: 50px;
+     border: none;
+     background-color: transparent;
+     color: #42594a;
+}
+
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  - - - - - - - - - - - - - - POSTS - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+.posts-wrapper {
+    height: calc(100vh - 100px);
+    padding: 20px;
+    text-align: center;
+}
+
+.posts-wrapper h1 {
+    margin-top: 100px;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.posts-wrapper form {
+    text-align: left;
+}
+.posts-wrapper form label {
+    font-family: "Overpass", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+}
+.posts-wrapper form input {
+    width: 100%;
+    background-color: #d8eee0;
+    padding: 5px 0;
+    border: none;
+    border-bottom: 1px solid #42594a;
+    font-family: "Overpass", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 10px;
+}
+::-webkit-input-placeholder {
+    font-family: "Overpass", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444;
+}
+
+.posts-wrapper form span {
+    font-family: "Overpass", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: red;
+}
+.posts-wrapper form .add {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    font-family: "Overpass", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.posts-wrapper form .add:hover {
+    background-color: #42594a;
+    transition: all 0.5s ease-in-out;
+}
+.posts-wrapper p {
+    padding-top: 20px;
+}
+
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  - - - - - - - - - - - - -  FOOTER - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+footer {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+footer p {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+}
+footer a {
+    text-align: right;
+    font-size: 14px;
+    font-weight: 400;
+    color: #EB8800;
+}
+
+
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  - - - - - - - - - - - - - - TABLET  - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+@media only screen and (min-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+    }
+    /* Containers */
+    .index-wrapper, .about-wrapper, .posts-wrapper {
+        grid-column: 2/3;
+    }
+}
+
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  - - - - - - - - - - - - - - DESKTOP - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+@media only screen and (min-width: 1124px) {
+    /* Header with nav */
+    .header li {
+        float: left;
+    }
+
+    .header ul #first {
+        padding-top: 0px;
+    }
+    .header li a {
+        padding: 20px 20px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .header .menu {
+        clear: none;
+        max-height: none;
+        float: right;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+    .container {
+        max-width: 1500px;
+        display: grid;
+        grid-template-columns: 35% 30% 35%;
+    }
+    /* Containers */
+    .index-wrapper, .about-wrapper, .posts-wrapper {
+        grid-column: 2/3;
+    }
+    .index-wrapper h1, .about-wrapper h1, .posts-wrapper h1{
+    font-size: 48px;
+    font-weight: 800;
+    }
+    .index-wrapper p, .about-wrapper p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    }
+    .about-wrapper h2 {
+        font-size: 24px;
+        line-height: 34px;
+    }
+}
